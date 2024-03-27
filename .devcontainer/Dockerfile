@@ -5,7 +5,3 @@ RUN apt-get update && apt-get install -y \
     cmake \
     gcov \
     ninja-build
-RUN mkdir -p /home/workspace
-WORKDIR /home/workspace
-
-CMD ["tail", "-f", "/dev/null"]
