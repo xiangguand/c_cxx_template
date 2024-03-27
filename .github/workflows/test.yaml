@@ -1,0 +1,23 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          components: clippy
+          override: true
+      - name: Set up CMake
+        run: cmake -S . -B build -G"Ninja"
+
+      - name: Build
+        run: ninja -C build
+      
+      - nmae: Run tests
+        run: cd build && ctest .
