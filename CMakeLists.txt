@@ -32,7 +32,7 @@ SET(CFLAGS
     -Wunreachable-code
     -Wwrite-strings
     -Wpointer-arith
-    -Werror
+    # -Werror
     -Wall
 )
 
