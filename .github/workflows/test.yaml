@@ -4,14 +4,14 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          toolchain: stable
-          profile: minimal
-          components: clippy
-          override: true      
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install toolchain
+        run: sudo apt-get update && sudo apt-get install cmake ninja-build gcc g++
+
       - name: Run tests
         run: ./unit_test.sh
