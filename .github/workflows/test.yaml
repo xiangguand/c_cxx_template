@@ -12,12 +12,6 @@ jobs:
           toolchain: stable
           profile: minimal
           components: clippy
-          override: true
-      - name: Set up CMake
-        run: cmake -S . -B build -G"Ninja"
-
-      - name: Build
-        run: ninja -C build
-      
-      - nmae: Run tests
+          override: true      
+      - name: Run tests
         run: ./unit_test.sh
