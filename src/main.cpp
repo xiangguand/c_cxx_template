@@ -2,12 +2,12 @@
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
-  (void)argc;
-  (void)argv;
+int main(int argc, char *argv[])
+{
+	(void)argc;
+	(void)argv;
 
-  cout << "Hello world" << endl;
+	cout << "Hello world" << endl;
 
-  return 0;
+	return 0;
 }
-
