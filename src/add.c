@@ -15,8 +15,8 @@
  *
  * -----------------------------------------------------------------------------
  *
- * \file     main.cpp
- * \brief    Example main function. In this function, it will call C function and try to execute it.
+ * \file     add.c
+ * \brief    Example add32 function. Return a + b.
  * \version  v1.0.0
  * \date     08. April. 2023
  *
@@ -25,28 +25,9 @@
  * -----------------------------------------------------------------------------
  **/
 
-#include <iostream>
+int add32(int a, int b);
 
-using namespace std;
-
-extern "C" {
-	/* Call C function */
-	int add32(int a, int b);
-}
-
-int main(int argc, char *argv[])
+int add32(int a, int b)
 {
-	(void)argc;
-	(void)argv;
-
-	string compiler = "None";
-#ifdef __clang__
-	compiler = "CLANG";
-#elif defined(__GNUC__)
-	compiler = "GNU";
-#endif
-	
-	cout << "Hello world " << add32(10, 20) << "," << compiler << endl;
-
-	return 0;
+    return a + b;
 }
